@@ -19,7 +19,7 @@ node {
         sh '''
             export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
 
-            docker build -t rohitmch/week12-cicd-app:latest .
+            docker build -t rohithemc/week12-cicd-app:latest .
         '''
     }
 
@@ -33,7 +33,7 @@ node {
                 export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
 
                 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-                docker push rohitmch/week12-cicd-app:latest
+                docker push rohithemc/week12-cicd-app:latest
                 docker logout
             '''
         }
