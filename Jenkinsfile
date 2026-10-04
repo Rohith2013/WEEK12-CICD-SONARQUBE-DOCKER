@@ -17,7 +17,7 @@ node {
 
     stage('Docker Build') {
         sh '''
-            /Users/rohitm/.docker/bin/docker build -t rohitmch/week12-cicd-app:latest .
+            /Applications/Docker.app/Contents/Resources/bin/docker build -t rohitmch/week12-cicd-app:latest .
         '''
     }
 
@@ -28,9 +28,9 @@ node {
             passwordVariable: 'DOCKER_PASSWORD'
         )]) {
             sh '''
-                echo "$DOCKER_PASSWORD" | /Users/rohitm/.docker/bin/docker login -u "$DOCKER_USERNAME" --password-stdin
-                /Users/rohitm/.docker/bin/docker push rohitmch/week12-cicd-app:latest
-                /Users/rohitm/.docker/bin/docker logout
+                echo "$DOCKER_PASSWORD" | /Applications/Docker.app/Contents/Resources/bin/docker login -u "$DOCKER_USERNAME" --password-stdin
+                /Applications/Docker.app/Contents/Resources/bin/docker push rohitmch/week12-cicd-app:latest
+                /Applications/Docker.app/Contents/Resources/bin/docker logout
             '''
         }
     }
