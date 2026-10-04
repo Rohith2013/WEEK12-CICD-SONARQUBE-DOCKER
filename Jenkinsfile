@@ -14,3 +14,7 @@ node {
         }
     }
 
+    stage('Docker Build') {
+        sh 'docker build -t rohitmch/week12-cicd-app:latest .'
+    }
+}
